@@ -8,4 +8,6 @@ RUN python3 -m pip install -r requirements.txt
 
 ADD app.py /app.py
 
+EXPOSE 5000
+
 ENTRYPOINT ["/usr/local/bin/python3", "/app.py"]
