@@ -11,3 +11,4 @@ ADD app.py /app.py
 EXPOSE 5000
 
 ENTRYPOINT ["/usr/local/bin/python3", "/app.py"]
+CMD ["--bind-host", "0.0.0.0"]

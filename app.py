@@ -1,5 +1,6 @@
 import logging
 
+import click
 from flask import Flask, redirect
 
 log = logging.getLogger(__name__)
@@ -20,7 +21,13 @@ def pep(number):
     log.info("PEP: %d", number)
     return redirect(PEP_URL_TPL.format(number))
 
+@click.command()
+@click.option("--bind-host", default="127.0.0.1")
+@click.option("--bind-port", default=5000)
+def main(bind_host, bind_port):
+    app.run(host=bind_host, port=bind_port)
+
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s: %(message)s")
-    app.run()
+    main()
