@@ -8,4 +8,4 @@ RUN python3 -m pip install -r requirements.txt
 
 ADD app.py /app.py
 
-ENTRYPOINT ["/usr/bin/python3", "/app.py"]
+ENTRYPOINT ["/usr/local/bin/python3", "/app.py"]
